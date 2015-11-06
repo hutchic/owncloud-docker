@@ -1,0 +1,9 @@
+FROM python
+
+RUN pip install ocdev
+
+VOLUME /src
+
+WORKDIR /src
+
+CMD ocdev setup --dir /src/ base
