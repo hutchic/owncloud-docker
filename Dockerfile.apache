@@ -2,7 +2,8 @@ FROM php:5.6-apache
 
 RUN \
   apt-get update && \
-  apt-get install -yf unzip libicu-dev sqlite3 libsqlite3-dev zlib1g-dev libpng12-dev libjpeg62-turbo-dev && \
+  apt-get install -yf unzip php5-sqlite php5-gd libicu-dev sqlite3 phpunit git \
+    libsqlite3-dev zlib1g-dev libpng12-dev libjpeg62-turbo-dev php5-curl && \
   docker-php-ext-install pdo_sqlite mbstring intl zip gd
 
 COPY . /src
